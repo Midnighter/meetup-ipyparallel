@@ -1,19 +1,17 @@
 # Interactive Parallel Computing
 
-## Overview
-
-1. Architecture
-1. Installation & Setup
-
-## Architecture
-
-Cluster, Controller, Engine, Client
+How to set up `ipyparallel` and test the notebooks from the Python Users Berlin
+meetup.
 
 ## Installation & Setup
 
 1. Create virtualenv
-2. install using `requirements.in`
-3. Enable extensions (differences between `--user`, `--sys-prefix`, or nothing)
+2. install `pip -r requirements.in`
+3. Enable install & extensions:
+    * with no flag, this will attempt to install to system space (will
+      require root privileges)
+    * `--user` will install into user space
+    * `--sys-prefix` will install into the environment (my preferred choice)
    ```
    jupyter nbextension enable --py widgetsnbextension --sys-prefix
    jupyter nbextension install --py ipyparallel --sys-prefix
@@ -24,3 +22,10 @@ Cluster, Controller, Engine, Client
    ```
    ipython profile create --parallel --profile=mylocal
    ```
+5. Start the notebooks `jupyter notebook`
+6. Start a cluster either through the cluster tab in Jupyter or with `ipcluster
+   start`.
+
+The material covered in the meetup is introductory. Please delve into [the
+documentation](https://ipyparallel.readthedocs.io/en/latest/) for more in-depth
+descriptions and further topics.
